@@ -1,5 +1,5 @@
 <x-layouts.app>
-    <div class="content">
+    <div class="wrapper pizza-details">
         <div class="title">
             <!-- Pizza Name -->
             Order for {{ $pizza->name }}
@@ -19,20 +19,23 @@
 
             <!-- Pizza Toppings -->
             <p><strong>{{ __('Toppings:') }}</strong>
-                @foreach ($pizza->toppings as $topping)
-                    & {{ $topping }}
-                @endforeach
+                <ul>
+                   @foreach ($pizza->toppings as $topping)
+                    <li>{{ $topping }}</li>
+                @endforeach 
+                </ul>
+                
             </p>
             <form action="/pizzas/{{ $pizza->id }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <button>Complete order</button>
+                <button class="back">Complete order</button>
             </form>
 
             <!-- Age (new/classic/vintage) -->
             {{-- <p><strong>{{ __('Age:') }}</strong> {{ ucfirst($pizza->age) }}</p> --}}
         </div>
-        <a href="/pizzas"><- Back to all pizzas</a>
+        <a href="/pizzas" class="back"><- Back to all pizzas</a>
     </div>
 
 

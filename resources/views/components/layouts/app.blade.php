@@ -14,6 +14,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('/css/main.css') }}" rel="stylesheet">
+    @vite(['resources/sass/app.scss'])
 </head>
 
 <body>

@@ -1,28 +1,23 @@
 <x-layouts.app>
-    <div class="flex-center position-ref full-height">
-        <div class="content">
-            <div class="title">
-                {{ __('Pizza List') }} 
-            </div>
-
-            @foreach ($pizzas as $pizza)
-                <div class="">
-                    Name : {{ $pizza->name }} - 
-                    Type : {{ $pizza->type }} - 
-                    Base : {{ $pizza->base }} - 
-                    Toppings :
-                        @foreach ($pizza->toppings as $topping)
-                               & {{ $topping }} 
-                        @endforeach              -        
-                    Price : {{ $pizza->price }}
-                </div>
-            @endforeach
-
-            <!-- If there are no pizzas, show a message -->
-            @if ($pizzas->isEmpty())
-                {{ __('No pizzas available at the moment.') }}
-            @endif
-            <a href="/">Return to Home</a>
+    <div class="pizza-index content">
+        <div class="title">
+            {{ __('Pizza Orders') }}
         </div>
+
+        @foreach ($pizzas as $pizza)
+            <a href="/pizzas/{{ $pizza->id }}">
+                <div class="pizza-item">
+                    <img src="{{ asset('/img/pizza.jpeg') }}" width="20%" alt="pizza icon">
+                    <h4>{{ $pizza->name }}</h4>
+                </div>
+            </a>
+        @endforeach
+
+        <!-- If there are no pizzas, show a message -->
+        @if ($pizzas->isEmpty())
+            <p>{{ __('No pizzas available at the moment.') }}</p>
+        @endif
+        <a href="/" class="back">Return to Home</a>
     </div>
+
 </x-layouts.app>

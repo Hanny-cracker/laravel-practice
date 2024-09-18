@@ -1,12 +1,19 @@
 import { defineConfig } from 'vite';
-import sass  from 'sass';
+import sass from 'vite-plugin-sass';
 import laravel from 'laravel-vite-plugin';
 
 export default defineConfig({
-    plugins: [
+    plugins: [sass(),
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
+            input: ['resources/css/app.css', 'resources/js/app.js','resources/sass/app.scss'],
             refresh: true,
         }),
     ],
+    css:{
+        preprocessorOptions: {
+            sass: {
+                implementation: sass,
+            }
+        }
+    }
 });

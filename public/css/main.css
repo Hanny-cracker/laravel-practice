@@ -7,22 +7,24 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
-.title{
-    font-size: 50px;
+
+/* .title{
+    font-size: 500px;
     text-transform: uppercase;
     border-bottom: 2px solid;
     text-shadow: 0 0 3px #FF0000;
     padding: 10px;
     color: rgb(2, 87, 2);
     margin-bottom: 20px
-}
+} */
 
-.footer{
-    position: absolute;
-    background: #eee;
+.footer {
     padding: 20px;
-    text-align: center;
-    width: 100%;
+    position: fixed;
+    left: 0;
     bottom: 0;
-    
+    width: 100%;
+    background: #eee;
+    text-align: center;
+
 }
