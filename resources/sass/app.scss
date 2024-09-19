@@ -1,3 +1,13 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+
 html,
 body {
   background-color: #fff;
@@ -134,7 +144,7 @@ body {
     margin-top: 20px;
   }
 }
-.content a {
+.x-layout a {
   text-decoration: none;
   color: rgb(2, 87, 2);
   border-bottom: 2px solid;

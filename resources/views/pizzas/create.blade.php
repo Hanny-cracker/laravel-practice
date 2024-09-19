@@ -1,3 +1,4 @@
+@extends('layouts.app')
 <x-layouts.app>
     <div class="wrapper create-pizza">
         <div class="title">

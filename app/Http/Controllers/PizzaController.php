@@ -7,6 +7,9 @@ use App\Models\Pizza;
 
 class PizzaController extends Controller
 {
+    // public function __construct(){
+    //     $this->middleware('auth');
+    // }
     public function index(){
 
         // $pizzas = Pizza::all();
@@ -40,7 +43,7 @@ class PizzaController extends Controller
 
         $pizza -> save();
 
-        return redirect('/')->with('mssg','Thanks for your order');
+        return redirect('/')->with('mssg','Thanks for your order'); //the with send a session data to the view
     }
 
     public function destroy($id){

@@ -1,3 +1,4 @@
+@extends('layouts.app')
 <x-layouts.app>
     <div class="wrapper pizza-details">
         <div class="title">
@@ -9,7 +10,7 @@
             <p>{{ $pizza->description }}</p>
 
             <!-- Pizza Price -->
-            <p><strong>{{ __('Price:') }}</strong> ${{ number_format($pizza->price, 2) }}</p>
+            <p><strong>{{ __('Quantity:') }}</strong> {{ number_format($pizza->price) }}</p>
 
             <!-- Pizza Base -->
             <p><strong>{{ __('Base:') }}</strong> {{ ucfirst(str_replace('_', ' ', $pizza->base)) }}</p>
@@ -26,7 +27,7 @@
                 </ul>
                 
             </p>
-            <form action="/pizzas/{{ $pizza->id }}" method="POST">
+            <form action="{{route('pizza.index',$pizza->id)}}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button class="back">Complete order</button>

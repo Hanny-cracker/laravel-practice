@@ -1,11 +1,12 @@
+@extends('layouts.app')
 <x-layouts.app>
-    <div class="pizza-index content">
+    <div class="pizza-index x-layout">
         <div class="title">
             {{ __('Pizza Orders') }}
         </div>
 
         @foreach ($pizzas as $pizza)
-            <a href="/pizzas/{{ $pizza->id }}">
+            <a href="{{route('pizza.index',$pizza->id)}}">
                 <div class="pizza-item">
                     <img src="{{ asset('/img/pizza.jpeg') }}" width="20%" alt="pizza icon">
                     <h4>{{ $pizza->name }}</h4>
